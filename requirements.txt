@@ -1,0 +1,33 @@
+# requirements.txt
+# 웹 프레임워크
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+websockets==12.0
+python-multipart==0.0.6
+
+# 컴퓨터 비전 및 AI
+opencv-python==4.8.1.78
+ultralytics==8.0.196
+torch==2.1.0
+torchvision==0.16.0
+numpy==1.24.3
+pillow==10.0.1
+
+# 영상/이미지 처리
+moviepy==1.0.3
+scikit-image==0.21.0
+matplotlib==3.7.2
+
+# 데이터베이스 및 저장
+sqlalchemy==2.0.23
+
+# 유틸리티
+python-dotenv==1.0.0
+pydantic==2.4.2
+jinja2==3.1.2
+aiofiles==23.2.1
+
+# 개발 도구
+pytest==7.4.3
+black==23.9.1
+
