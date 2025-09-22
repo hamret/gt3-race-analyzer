@@ -1,0 +1,42 @@
+[
+  {
+    "position": 1,
+    "driverName": "M. Schumacher",
+    "carModel": "Porsche 911 GT3 R",
+    "currentLap": 5,
+    "lastLapTime": "1:49.528",
+    "gapToLeader": "+0.000"
+  },
+  {
+    "position": 2,
+    "driverName": "L. Hamilton",
+    "carModel": "Mercedes-AMG GT3",
+    "currentLap": 5,
+    "lastLapTime": "1:49.810",
+    "gapToLeader": "+0.282"
+  },
+  {
+    "position": 3,
+    "driverName": "M. Verstappen",
+    "carModel": "Ferrari 296 GT3",
+    "currentLap": 5,
+    "lastLapTime": "1:49.955",
+    "gapToLeader": "+0.427"
+  },
+  {
+    "position": 4,
+    "driverName": "K. Raikkonen",
+    "carModel": "Audi R8 LMS Evo II",
+    "currentLap": 5,
+    "lastLapTime": "1:50.112",
+    "gapToLeader": "+0.584"
+  },
+  {
+    "position": 5,
+    "driverName": "F. Alonso",
+    "carModel": "Lamborghini Huracan GT3",
+    "currentLap": 4,
+    "lastLapTime": "1:50.530",
+    "gapToLeader": "-1 Lap"
+  }
+]

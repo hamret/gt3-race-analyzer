@@ -1,0 +1,143 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    overflow: hidden; /* Prevents scrollbars */
+}
+
+#broadcast-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+#race-header {
+    background-color: #1f1f1f;
+    padding: 10px 20px;
+    border-bottom: 2px solid #c80000;
+    text-align: center;
+}
+
+#race-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+#main-content {
+    display: flex;
+    flex-grow: 1;
+    min-height: 0; /* Important for flex-grow in a flex column */
+}
+
+#video-player-container {
+    flex-grow: 1;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#player {
+    width: 100%;
+    height: 100%;
+}
+
+#leaderboard-container {
+    width: 350px;
+    background-color: #1a1a1a;
+    padding: 15px;
+    overflow-y: auto;
+    border-left: 1px solid #333;
+}
+
+#leaderboard-container h2 {
+    margin-top: 0;
+    font-size: 1.3em;
+    color: #fff;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+}
+
+#leaderboard {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#leaderboard th, #leaderboard td {
+    padding: 8px 5px;
+    text-align: left;
+}
+
+#leaderboard thead {
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+#leaderboard tbody tr:nth-child(odd) {
+    background-color: #222;
+}
+
+#leaderboard tbody td:first-child {
+    font-weight: bold;
+    text-align: center;
+}
+
+#telemetry-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1f1f1f;
+    padding: 15px;
+    border-top: 1px solid #333;
+}
+
+.telemetry-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.telemetry-item .label {
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+.telemetry-item .value {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #fff;
+    min-width: 80px; /* Ensure space for values */
+    text-align: center;
+}
+
+.telemetry-item .unit {
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* Throttle and Brake Bars */
+#throttle-bar-container, #brake-bar-container {
+    width: 150px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+#throttle-bar {
+    width: 0%; /* Controlled by JS */
+    height: 100%;
+    background-color: #4CAF50; /* Green */
+    transition: width 0.05s linear;
+}
+
+#brake-bar {
+    width: 0%; /* Controlled by JS */
+    height: 100%;
+    background-color: #f44336; /* Red */
+    transition: width 0.05s linear;
+}
