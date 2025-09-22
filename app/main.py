@@ -1,6 +1,7 @@
-from fastapi import FastAPI, File, UploadFile, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, File, UploadFile, WebSocket, WebSocketDisconnect, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
 import uvicorn
 import os
 import cv2
@@ -14,6 +15,9 @@ app = FastAPI(title="GT3 Race Analyzer", version="1.0.0")
 # 정적 파일 서빙
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
+# 템플릿 설정
+templates = Jinja2Templates(directory="app/templates")
+
 # 업로드 디렉토리 생성
 UPLOAD_DIR = "app/static/uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
@@ -21,6 +25,11 @@ os.makedirs(UPLOAD_DIR, exist_ok=True)
 # 전역 인스턴스
 video_processor = VideoProcessor()
 race_analyzer = RaceAnalyzer()
+
+@app.get("/broadcast", response_class=HTMLResponse)
+async def get_broadcast_page(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
+
 
 @app.get("/")
 async def root():
@@ -58,7 +67,7 @@ async def root():
                     <div id="vehicleCount">0</div>
                 </div>
                 <div class="stat-box">
-                    <h3>처리 FPS</h3>
+                    <h3>재생 FPS</h3>
                     <div id="fps">0</div>
                 </div>
                 <div class="stat-box">

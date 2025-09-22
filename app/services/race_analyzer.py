@@ -173,6 +173,7 @@ class RaceAnalyzer:
             total_speed = sum(r["speed"] for r in rankings)
             summary["average_speed"] = total_speed / len(rankings)
 
+
         # 추월 예측 (상위 차량들 간)
         for i in range(min(5, len(rankings) - 1)):
             for j in range(i + 1, min(5, len(rankings))):
